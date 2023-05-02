@@ -34,8 +34,7 @@ private var isLock = true
 public var chipStorage: [Chip] = []
 
 //MARK: Object
-
-class GeneratingQueue: Thread {
+final class GeneratingQueue: Thread {
     private var runCount = 0
     
     func createNewInstance() {
@@ -56,7 +55,7 @@ class GeneratingQueue: Thread {
     }
 }
     
-class WorkerQueue: Thread {
+final class WorkerQueue: Thread {
     func solderChip() {
         mutex.lock()
         while !isLock {
