@@ -63,8 +63,8 @@ class WorkerQueue: Thread {
             mutex.wait()
         }
         isLock = true
-        Chip.sodering(chipStorage.last ?? Chip(chipType: .small))
         mutex.unlock()
+        Chip.sodering(chipStorage.last ?? Chip(chipType: .small))
     }
 }
 
